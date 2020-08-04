@@ -10,4 +10,24 @@ class ConnexionController extends Controller
     {
         return view('connexion');
     }
+
+    public function traitement()
+    {
+        request()->validate([
+            'email' => ['required', 'email'],
+            'password' => ['required']
+        ]);
+
+        $resultat = auth()->attempt([
+            'email' => request('email'),
+            'password' => request('password')
+        ]);
+        if ($resultat) {
+            return redirect('/');
+        }
+
+        return back()->withInput()->withErrors([
+            'email' => 'Vos identifiants sont incorrects',
+        ]);
+    }
 }

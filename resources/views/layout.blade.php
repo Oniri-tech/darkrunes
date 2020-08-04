@@ -26,8 +26,14 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item"><a href="/inscription" class="nav-link">Inscription</a></li>
-                    <li class="nav-item"><a href="/connexion" class="nav-link">Connexion</a></li>
+                    @guest
+                        <li class="nav-item"><a href="/inscription" class="nav-link">Inscription</a></li>
+                        <li class="nav-item"><a href="/connexion" class="nav-link">Connexion</a></li> 
+                    @endguest
+                    @auth
+                        <li class="nav-item"><a href="/deconnection" class="nav-link">Déconnection</a></li>
+                    @endauth
+                    
                 </ul>
             </div>
         </nav>
