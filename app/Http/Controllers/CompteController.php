@@ -9,6 +9,9 @@ class CompteController extends Controller
 {
     public function monProfil()
     {
+        if (!Auth::user()->personnage) {
+            return redirect('/new-personnage');
+        }
         return view('mon-compte', [
             'utilisateur' => Auth::user(),
         ]);

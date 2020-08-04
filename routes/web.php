@@ -26,6 +26,8 @@ Route::post('/connexion', 'ConnexionController@traitement');
 Route::group([
     'middleware' => 'App\Http\Middleware\Auth'
 ], function () {
+    Route::get('/new-personnage', 'PersonnageController@new');
+    Route::post('/new-personnage', 'PersonnageController@traitement');
     Route::get('/mon-profil', 'CompteController@monProfil');
     Route::get('/deconnection', 'CompteController@logout');
 });

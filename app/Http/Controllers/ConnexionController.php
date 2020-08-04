@@ -23,7 +23,7 @@ class ConnexionController extends Controller
             'password' => request('password')
         ]);
         if ($resultat) {
-            return redirect('/');
+            return redirect('/mon-profil');
         }
 
         return back()->withInput()->withErrors([
