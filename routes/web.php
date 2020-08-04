@@ -19,3 +19,5 @@ Route::get('/', function () {
 
 Route::get('/inscription', 'InscriptionController@formulaire');
 Route::post('/inscription', 'InscriptionController@traitement');
+
+Route::get('/connexion', 'ConnexionController@formulaire');
