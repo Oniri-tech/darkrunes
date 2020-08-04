@@ -23,6 +23,10 @@ Route::post('/inscription', 'InscriptionController@traitement');
 Route::get('/connexion', 'ConnexionController@formulaire');
 Route::post('/connexion', 'ConnexionController@traitement');
 
-Route::get('/mon-profil', 'CompteController@monProfil');
+Route::group([
+    'middleware' => 'App\Http\Middleware\Auth'
+], function () {
+    Route::get('/mon-profil', 'CompteController@monProfil');
+    Route::get('/deconnection', 'CompteController@logout');
+});
 
-Route::get('/deconnection', 'CompteController@logout');

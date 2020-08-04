@@ -38,6 +38,7 @@
                 </ul>
             </div>
         </nav>
+        @include('flash::message')
         @yield('contenu')
     </body>
 </html>
