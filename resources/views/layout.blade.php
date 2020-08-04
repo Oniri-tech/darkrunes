@@ -31,6 +31,7 @@
                         <li class="nav-item"><a href="/connexion" class="nav-link">Connexion</a></li> 
                     @endguest
                     @auth
+                        <li class="nav-item"><a href="/mon-profil" class="nav-link">Mon Compte</a></li>
                         <li class="nav-item"><a href="/deconnection" class="nav-link">Déconnection</a></li>
                     @endauth
                     

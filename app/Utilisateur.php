@@ -10,4 +10,9 @@ class Utilisateur extends Model implements Authenticatable
 {
     use BasicAuthenticatable;
     protected $fillable = ['pseudo', 'email', 'password'];
+
+    public function personnage()
+    {
+        return $this->hasOne(Personnage::class);
+    }
 }
